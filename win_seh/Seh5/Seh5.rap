@@ -1,0 +1,48 @@
+[Project]
+Assembler=masm
+Type=Win32 App
+Description=Seh5
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+[Files]
+1=Seh5.Asm
+2=Seh5.Inc
+3=Seh5.Rc
+[MakeFiles]
+0=Seh5.rap
+1=Seh5.rc
+2=Seh5.asm
+3=Seh5.obj
+4=Seh5.res
+5=Seh5.exe
+6=Seh5.def
+7=Seh5.dll
+8=Seh5.txt
+9=Seh5.lib
+10=Seh5.mak
+11=Seh5.hla
+12=Seh5.com
+13=Seh5.ocx
+14=Seh5.idl
+15=Seh5.tlb
+16=Seh5.sys
+[MakeDef]
+Menu=1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0 /LIBPATH:"$L" /OUT:"$5",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+7=0,0,"$E\OllyDbg",5
+[Group]
+Group=Assembly,Resources,Misc
+1=2
+2=2
+3=3
+[AutoLoad]
+AutoLoad=
+[RADebugBP]
+1=
+2=
